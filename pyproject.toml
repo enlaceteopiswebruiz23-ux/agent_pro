@@ -1,0 +1,29 @@
+[project]
+name = "agent-pro"
+version = "0.1.0"
+description = "Agente de IA con LangGraph"
+readme = "README.md"
+authors = [
+    { name = "carlos", email = "carlos.ruiz@unisa.edu.mx" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=1.4.2",
+    "langchain-openai>=1.6.2",
+    "langgraph>=1.2.11",
+    "python-dotenv>=1.2.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = ["agents", "api"]
+
+[dependency-groups]
+dev = [
+    "colorama>=0.4.6",
+    "ipykernel>=7.4.0",
+    "langgraph-cli[inmem]>=0.4.38",
+]
